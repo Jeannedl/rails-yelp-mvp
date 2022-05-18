@@ -1,0 +1,11 @@
+<div class="container my-5">
+  <div class="row">
+    <div class="col-6 mx-auto">
+      <h1>New restaurant</h1>
+      <%= render 'restaurants/form', restaurant: @restaurant %>
+
+
+      <%= link_to 'This restaurant info', restaurants_path(@restaurant) %>
+    </div>
+  </div>
+</div>

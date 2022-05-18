@@ -1,0 +1,31 @@
+<div class="container my-5">
+  <div class="row">
+    <div class="col-6 mx-auto">
+      <div class="card">
+        <h1><%= @restaurant.name %></h1>
+        <div>
+          <p>Address:  <%= @restaurant.address %></p>
+          <p>Category:  <%= @restaurant.category %></p>
+          <p>Contact:  <%= @restaurant.phone_number %></p>
+        </div>
+      </div>
+      <p><strong>Reviews</strong></p>
+      <ul class="list-group">
+        <% @restaurant.reviews.each do |review| %>
+          <li class="list-group-item">
+            <%= review.rating %>
+            <%= review.content %>
+          </li>
+        <% end %>
+      </ul>
+      <div class="buttons">
+        <div class = "btn btn-warning">
+          <%= link_to 'Rate this restaurant', new_restaurant_review_path(@restaurant) %>
+        </div>
+        <div class="btn btn-warning">
+          <%= link_to 'Back to restaurants', restaurants_path %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+<%= simple_form_for(review) do |f| %>
+  <%= f.input :rating, collection: Review::GRADES %>
+  <%= f.input :content %>
+  <%= f.submit "#{ @review.persisted? ? 'Update' : 'Declare' } found review", class: 'btn btn-primary' %>
+<% end %>
